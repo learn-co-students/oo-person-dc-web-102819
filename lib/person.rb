@@ -5,36 +5,36 @@ require 'pry'
 # your code goes here
 class Person 
     
-    attr_accessor :name , :bank_account_balance
+    attr_accessor :name , :bank_account
 
-    def initialize(name , bank_account_balance=25, happiness_points=8 , hygiene_points=8) 
+    def initialize(name , bank_account=25, happiness=8 , hygiene=8) 
         @name = name
-        @bank_account_balance = bank_account_balance
-        @happiness_points = happiness_points
-        @hygiene_points = hygiene_points
+        @bank_account = bank_account
+        @happiness = happiness
+        @hygiene = hygiene
         # binding.pry 
       end
 
-      def happiness_points
+      def happiness
         @happiness_points
       end
 
-      def happiness_points=(new_happy_points)
-        happiness_value = [[new_happy_points.to_i , 0].max , 10].min
-        @happiness_points = happiness_value
+      def happiness=(new_happy_points)
+        happiness = [[new_happy_points.to_i , 0].max , 10].min
+        @happiness = happiness
       end
 
-      def hygiene_points
-        @hygiene_points
+      def hygiene
+        @hygiene
       end
 
-      def hygiene_points=(hygiene)
-        self.hygiene_value = [[hygiene.to_i , 0].max , 10].min
-        @hygiene_points = hygiene_value
+      def hygiene=(hygiene_points)
+        hygiene = [[hygiene_points.to_i , 0].max , 10].min
+        @hygiene = hygiene
       end
 
-      def clean(hygiene_points)
-        if hygiene_points >7 
+      def clean?
+        if hygiene >7 
           return true
         else 
           return false
@@ -67,16 +67,16 @@ Skyler = Person.new("Skyler" )
 #final_hygiene = clean(Skyler.hygiene_points)
 
 
-Skyler.bank_account_balance = 10000000
-Skyler.hygiene_points = -10 
-Skyler.happiness_points = -10 
-Skyler.happiness_points = 100
+Skyler.bank_account = 10000000
+Skyler.hygiene = -10 
+Skyler.happiness = -10 
+Skyler.happiness = 100
 
 Skyler.name = "John"
 puts Skyler.name 
-puts Skyler.bank_account_balance 
-puts Skyler.happiness_points 
-puts Skyler.hygiene_points 
+puts Skyler.bank_account
+puts Skyler.happiness
+puts Skyler.hygiene
 #puts "My hygiene points are #{}"
 
 
