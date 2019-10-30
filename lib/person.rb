@@ -72,16 +72,31 @@ attr_reader :name, :hygiene , :happiness
     def work_out
         self.happiness=(@happiness += 2)
         self.hygiene=(@hygiene -= 3)
-        puts "♪ another one bites the dust ♫"
+        return "♪ another one bites the dust ♫"
      end
      
         
      def call_friend(friend)
         
-        @happiness +=3
+       
         friend.happiness += 3
-       puts "Hi #{friend.name}! It's #{@name}. How are you?"
+        self.happiness +=3
+       return "Hi #{friend.name}! It's #{self.name}. How are you?"
      end
+
+     def start_conversation(friend, topic)
+        if topic == 'politics'
+            self.happiness -= 2
+            friend.happiness -= 2
+            return "blah blah partisan blah lobbyist"
+        elsif topic == 'weather'
+            self.happiness += 1
+            friend.happiness += 1
+            return "blah blah sun blah rain"
+        else
+            return "blah blah blah blah blah"
+        end
+    end
 end
 
 
