@@ -39,24 +39,16 @@ attr_accessor :bank_account
     end
 #Create happy? method: return true if happiness > 7
     def happy?
-        if @happiness > 7
-            return true
-        else
-            return false
-        end
+        return @happiness > 7
     end
 #Create clean? method: return true if happiness > 7
     def clean?
-        if @hygiene > 7
-            return true
-        else
-            return false
-        end
+        return @hygiene > 7
     end
 #Create get_paid method: Accepts salary and adds to bank account.
 #return "All about the benjamins."
     def get_paid(salary)
-        @bank_account += salary
+        self.bank_account += salary
         return "all about the benjamins"
     end
 
