@@ -25,8 +25,12 @@ class Person
       end
 
       def happiness=(new_happy_points)
-        happiness = [[new_happy_points.to_i , 0].max , 10].min
-        @happiness = happiness
+        if new_happy_points >10 
+          @happiness = 10
+        elsif new_happy_points <= 0
+          @happiness = 0
+        else @happiness = new_happy_points 
+        end 
       end
 
       def hygiene=(hygiene_points)
@@ -66,16 +70,24 @@ class Person
       end
 
       def work_out 
-        @happiness = @happiness + 2 
+        self.happiness = self.happiness + 2 
         self.hygiene = self.hygiene - 3 
         return "♪ another one bites the dust ♫"
       end
 
       # def call_friend
+
       # end
 
-      # def start_conversation
-      # end
+      def start_conversation (person , topic)
+        if topic == "politics"
+         return  "blah blah partisan blah lobbyist"
+        elsif topic = "weather"
+         return  "blah blah sun blah rain"  
+        else 
+          return "blah blah blah blah blah" 
+        end 
+      end
 
      
 end 
