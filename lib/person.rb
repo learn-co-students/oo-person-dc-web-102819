@@ -42,28 +42,6 @@ class Person
         new_point = points + change_amount
     end
 
-    # def change_happiness (change_amount)
-    #     new_happiness = change_point(@happiness, change_amount)
-    #     if new_happiness > 0 && new_happiness < 10
-    #         new_happiness
-    #     elsif  new_happiness > 10
-    #         10
-    #     else
-    #         0
-    #     end
-        
-    # end
-    
-    # def change_hygiene(change_amount)
-    #     new_hygiene = change_point(@hygiene, change_amount)
-    #     if new_hygiene > 0 && new_hygiene < 10
-    #         new_hygiene
-    #     elsif  new_hygiene > 10
-    #         10
-    #     else
-    #         0
-    #     end
-    # end
 
     def clean?
         if @hygiene > 7 
